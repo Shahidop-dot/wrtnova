@@ -44,7 +44,17 @@ export function assembleBanipFeeds(feedsStr, countryListStr) {
 export function computeAdds({ base = [], device = [], config = {} }) {
   const adds = [];
 
-  adds.push('curl', 'ip-full', 'umdns', 'luci');
+  adds.push(
+  'curl',
+  'ip-full',
+  'umdns',
+  'luci',
+
+  // Gaming / QoS
+  'luci-app-sqm',
+  'sqm-scripts',
+  'tc-full'
+);
   if (config.AP_MODE !== '1') {
     const dnsMode = config.DNS_MODE || 'https-dns-proxy';
     if (dnsMode === 'adguardhome') adds.push('adguardhome');
