@@ -47,6 +47,7 @@ export function computeAdds({ base = [], device = [], config = {} }) {
   adds.push(
   'curl',
   'umdns',
+    'ip-full',
   'luci',
 'luci-app-sqm',
 'sqm-scripts',
